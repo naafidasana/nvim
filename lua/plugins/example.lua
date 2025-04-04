@@ -9,6 +9,18 @@ if true then return {} end
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
+  -- Neo Tree config
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false, -- Show hidden files
+          hide_gitignored = false, -- Optionally, show git ignored files
+        },
+      },
+    },
+  },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
@@ -48,7 +60,7 @@ return {
       -- stylua: ignore
       {
         "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
+        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root, hidden = true }) end,
         desc = "Find Plugin File",
       },
     },
