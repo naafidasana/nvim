@@ -1,4 +1,5 @@
 tt.*
+:a
 .tests
 doc/tags
 debug
