@@ -16,7 +16,7 @@ return {
             "--fallback-style=Google",
             "--cross-file-rename",
           },
-          filetypes = { "c", "cpp", "objc", "objcpp", "cu" },
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
           root_dir = require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
         },
       },
